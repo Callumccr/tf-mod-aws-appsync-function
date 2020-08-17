@@ -73,7 +73,7 @@ variable "response_mapping_template" {
 }
 
 variable "description" {
-  description = "(Optional) - The Function description.."
+  description = "(Optional) - The Function description."
   type        = string
   default     = "Managed By Terraform"
 }
