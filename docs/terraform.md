@@ -21,7 +21,7 @@
 | aws\_assume\_role\_session\_name | (Optional) - The session name to use when making the AssumeRole call. | `string` | `""` | no |
 | aws\_region | The AWS region (e.g. ap-southeast-2). Autoloaded from region.tfvars. | `string` | `""` | no |
 | delimiter | (Optional) - Delimiter to be used between `namespace`, `environment`, `stage`, `name` and `attributes` | `string` | `"-"` | no |
-| description | (Optional) - The Function description.. | `string` | `"Managed By Terraform"` | no |
+| description | (Optional) - The Function description. | `string` | `"Managed By Terraform"` | no |
 | enabled | (Optional) - A Switch that decides whether to create a terraform resource or run a provisioner. Default is true | `bool` | `true` | no |
 | environment | (Optional) - Environment, e.g. 'dev', 'qa', 'staging', 'prod' | `string` | `""` | no |
 | function\_version | (Optional) - The version of the request mapping template. Currently the supported value is 2018-05-29. | `string` | `"2018-05-29"` | no |
@@ -33,5 +33,7 @@
 
 | Name | Description |
 |------|-------------|
-| arn | The ARN of the datasource |
+| arn | The ARN of the Function object. |
+| function\_id | A unique ID representing the Function object. |
+| id | API Function ID (Formatted as ApiId-FunctionId) |
 
