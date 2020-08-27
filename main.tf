@@ -1,5 +1,5 @@
 resource "aws_appsync_function" "default" {
-  for_each                  = var.enabled == true && length(var.functions_config) > 0 ? { for f in var.functions_config : f.name => f } : {}
+  for_each                  = var.enabled == true && length(var.function_config) > 0 ? { for f in var.function_config : f.name => f } : {}
   api_id                    = var.api_id
   data_source               = each.value.data_source
   name                      = each.value.name
