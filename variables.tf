@@ -52,36 +52,21 @@ variable "api_id" {
   type        = string
 }
 
-variable "function_name" {
-  description = "(Required) - The Function name. The function name does not have to be unique."
+variable "template_dir" {
+  description = "(Required) - The full directory path of the appsync templates"
   type        = string
 }
 
-variable "data_source" {
-  description = "(Required) - The Function DataSource name."
-  type        = string
-}
-
-variable "request_mapping_template" {
-  description = "(Required) -  The Function request mapping template. Functions support only the 2018-05-29 version of the request mapping template."
-  type        = string
-}
-
-variable "response_mapping_template" {
-  description = "(Required) - The Function response mapping template."
-  type        = string
-}
-
-variable "description" {
-  description = "(Optional) - The Function description."
-  type        = string
-  default     = "Managed By Terraform"
-}
-
-variable "function_version" {
-  description = "(Optional) - The version of the request mapping template. Currently the supported value is 2018-05-29."
-  type        = string
-  default     = "2018-05-29"
+variable "function_config" {
+  description = "(Required) - A list of maps that contain configuration for appsync function configuration to iteration over"
+  type = list(object({
+    name                      = string
+    description               = string
+    data_source               = string
+    request_mapping_template  = string
+    response_mapping_template = string
+    version                   = string
+  }))
 }
 
 # -----------------------------------------------------------------------------
