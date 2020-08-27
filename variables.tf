@@ -52,6 +52,11 @@ variable "api_id" {
   type        = string
 }
 
+variable "template_dir" {
+  description = "(Required) - The full directory path of the appsync templates"
+  type        = string
+}
+
 variable "function_config" {
   description = "(Required) - A list of maps that contain configuration for appsync function configuration to iteration over"
   type = list(object({

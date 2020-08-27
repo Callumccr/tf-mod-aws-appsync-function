@@ -102,6 +102,7 @@ TO-DO
 | api\_id | (Required) - The ID of the associated AppSync API. | `string` | n/a | yes |
 | availability\_zones | (Required) - The AWS avaialbility zones (e.g. ap-southeast-2a/b/c). Autoloaded from region.tfvars. | `list(string)` | n/a | yes |
 | function\_config | (Required) - A list of maps that contain configuration for appsync function configuration to iteration over | <code><pre>list(object({<br>    name                      = string<br>    description               = string<br>    data_source               = string<br>    request_mapping_template  = string<br>    response_mapping_template = string<br>    version                   = string<br>  }))<br></pre></code> | n/a | yes |
+| template\_dir | (Required) - The full directory path of the appsync templates | `string` | n/a | yes |
 | attributes | (Optional) - Additional attributes (e.g. `1`) | `list(string)` | `[]` | no |
 | aws\_account\_id | The AWS account id of the provider being deployed to (e.g. 12345678). Autoloaded from account.tfvars | `string` | `""` | no |
 | aws\_assume\_role\_arn | (Optional) - ARN of the IAM role when optionally connecting to AWS via assumed role. Autoloaded from account.tfvars. | `string` | `""` | no |
