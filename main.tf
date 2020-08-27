@@ -5,6 +5,6 @@ resource "aws_appsync_function" "default" {
   name              = each.value.name
   description       = each.value.description
   function_version  = each.value.function_version
-  request_template  = file("${var.template_dir}/${each.value.request_template}")
-  response_template = file("${var.template_dir}/${each.value.response_template}")
+  request_template  = file("${var.template_dir}/${each.value.request_mapping_templates}")
+  response_template = file("${var.template_dir}/${each.value.response_mapping_template}")
 }
